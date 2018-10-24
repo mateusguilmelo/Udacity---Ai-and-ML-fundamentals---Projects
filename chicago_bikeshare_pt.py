@@ -347,10 +347,13 @@ answer = input("")
 def count_items(column_list):
     item_types = []
     count_items = []
-    for i in column_list:
-        count_items.append(1)
-        if i not in item_types:
-            item_types.append(i)
+    for gender in column_list:
+        if gender not in item_types:
+            item_types.append(gender)
+            count_items.append(1)
+        else:
+            i = item_types.index(gender)
+            count_items[i] += 1
 
     return item_types, count_items
 
